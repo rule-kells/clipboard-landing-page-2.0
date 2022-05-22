@@ -1,0 +1,364 @@
+@import 'variables';
+@import 'global';
+
+// GENERAL STYLE
+h1,
+h2,
+h3 {
+  color: $dark-grayish-blue;
+  font-weight: $fw-600;
+  line-height: 1.3;
+}
+
+.fs-header-l {
+  font-size: $fs-header-l;
+}
+
+.fs-header-m {
+  font-size: $fs-header-m;
+}
+
+.fs-header-s {
+  font-size: $fs-header-s;
+}
+
+.fs-body {
+  --spacer: 1rem;
+
+  font-size: $fs-body;
+}
+
+//BUTTONS
+.btn {
+  width: 100%;
+  color: $white;
+  font-family: inherit;
+  font-size: 1.125rem;
+  letter-spacing: 0.5px;
+  line-height: 1.875;
+  padding: 0.8125rem 2.25rem;
+  border: none;
+  border-radius: $br;
+  box-shadow: $shadow;
+
+  &--strong {
+    background-color: $strong-cyan;
+    box-shadow: $shadow-strong;
+  }
+
+  &--light {
+    background-color: $light-blue;
+  }
+
+  & + .btn {
+    margin-top: 1.5rem;
+  }
+
+  @include breakpoint(desktop) {
+    & {
+      max-width: 14.1875rem;
+      transition: opacity 0.25s ease-in;
+    }
+
+    &:hover,
+    &:active {
+      cursor: pointer;
+      opacity: 0.75;
+    }
+
+    & + .btn {
+      margin-left: 1rem;
+      margin-top: 0;
+    }
+  }
+}
+
+// HEADER / HERO SECTION
+
+.hero {
+  background: url('../images/bg-header-mobile.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center top;
+  padding: 7.6875rem 2rem 10rem;
+
+  &__content {
+    font-size: clamp(1rem, 3.5vw, 1.25rem);
+
+    // &.container {
+    //   max-width: 45.625rem;
+    // }
+
+    p {
+      margin: 1rem 0 3rem;
+    }
+  }
+  img {
+    margin-bottom: 4rem;
+  }
+
+  @include breakpoint(tablet) {
+    background-image: url('../images/bg-header-desktop.png');
+    padding: 8rem 2rem 9.375rem;
+
+    img {
+      margin-bottom: 3.5rem;
+    }
+  }
+}
+
+// MAIN SECTION
+
+main {
+  padding-bottom: 10.625rem;
+
+  @include breakpoint(desktop) {
+    padding-bottom: 9.375rem;
+  }
+}
+
+// FEATURES SECTION
+.features {
+  margin: 4.0625em 0 11.625em;
+
+  img {
+    margin: 4.0625em auto 3.5em;
+  }
+
+  @include breakpoint(tablet) {
+    --gap: 3.5rem;
+    --spacer: 0.5rem;
+    margin: 5em 0 9.375em;
+
+    img {
+      margin: 0;
+    }
+
+    &.split {
+      max-width: 75.75rem;
+      display: grid;
+      grid-template-columns: minmax(auto, 752px) minmax(auto, 110px) minmax(
+          auto,
+          350px
+        );
+      align-items: center;
+      grid-template-areas: 'img . content';
+
+      transform: translateX(-6%);
+    }
+
+    & img {
+      grid-area: img;
+    }
+
+    & .features__content {
+      grid-area: content;
+      text-align: left;
+    }
+  }
+}
+
+// ACCESS SECTION
+
+.access {
+  & .access__content {
+    margin-bottom: 4rem;
+  }
+
+  @include breakpoint(tablet) {
+    & .access__content {
+      margin-bottom: 6.875rem;
+    }
+  }
+}
+
+// WORKFLOW SECTION
+
+.workflow {
+  --spacer: 1.125rem;
+
+  margin-top: 5.625rem;
+
+  &.container {
+    max-width: 68.75rem;
+  }
+
+  & .spacer-l {
+    --gap: 5.625rem;
+  }
+
+  & .flex {
+    --gap: 3.5rem;
+  }
+
+  & img {
+    margin-bottom: 2.5rem;
+  }
+
+  @include breakpoint(desktop) {
+    --gap: 0;
+    --spacer: 1rem;
+    margin-top: 8.625rem;
+
+    .flex {
+      --gap: 0;
+
+      display: flex;
+      flex-direction: row;
+      align-items: baseline;
+
+      & > * {
+        flex-basis: 100%;
+      }
+
+      & > * + * {
+        margin-left: 3.6875rem;
+      }
+    }
+  }
+}
+
+// CLIPBOARD SECTION
+.clipboard {
+  margin: 10.625rem auto 10.625rem;
+
+  & p {
+    margin-bottom: 2.875rem;
+  }
+
+  @include breakpoint(tablet) {
+    margin: 7.625rem auto 9.375rem;
+  }
+}
+
+// COMPANIES SECTION
+
+.companies {
+  // --gap: 3.6875rem;
+
+  &.container {
+    max-width: 69.375rem;
+  }
+
+  @include breakpoint(tablet) {
+    --gap: 0;
+
+    & .grid {
+      display: grid;
+      justify-content: space-between;
+      align-items: center;
+      grid-template-columns: repeat(auto-fit, minmax(calc(200px - 2em), auto));
+      gap: 2em;
+    }
+  }
+}
+
+// FOOTER SECTION
+
+footer {
+  position: relative;
+  background-color: hsl(179, 10%, 97%);
+  padding: 3.25rem 2rem 3.1875rem;
+  text-align: center;
+
+  & .container {
+    max-width: 1110px;
+  }
+
+  .logo {
+    width: 3.4375rem;
+  }
+
+  .nav__list {
+    --gap: 1.25em;
+    margin: 2.5em auto 0;
+    max-width: 635px;
+
+    & a {
+      color: $dark-grayish-blue;
+    }
+
+    @include breakpoint(desktop) {
+      margin: 0;
+
+      &.flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+      }
+
+      &.flex > * {
+        flex: 1 1 100%;
+      }
+
+      &.flex > div li + li {
+        margin-top: 0.75rem;
+      }
+
+      & a:hover,
+      a:active {
+        color: $strong-cyan;
+      }
+    }
+  }
+
+  .socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+
+    & li + li {
+      margin-left: 1em;
+    }
+
+    @include breakpoint(desktop) {
+      margin-top: auto;
+      margin-bottom: auto;
+
+      & li + li {
+        margin-left: 1.5em;
+      }
+
+      & img:hover,
+      & img:active {
+        filter: invert(60%) sepia(10%) saturate(2500%) hue-rotate(125deg);
+      }
+    }
+  }
+
+  .attribution {
+    position: absolute;
+    font-size: 0.6875rem;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+  .attribution a {
+    color: $strong-cyan;
+    font-weight: $fw-600;
+  }
+
+  @include breakpoint(desktop) {
+    text-align: left;
+
+    & .logo {
+      margin: 0;
+      margin-right: 2em;
+    }
+
+    & .flex {
+      --gap: 0;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    &.flex > * {
+      flex: 1 1 100%;
+    }
+  }
+}
