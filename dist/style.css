@@ -12,9 +12,8 @@ html {
           box-sizing: inherit;
 }
 
-ul[class] {
+ul {
   list-style: none;
-  margin: 0;
   padding: 0;
 }
 
@@ -294,18 +293,12 @@ main {
   }
 }
 
-.clipboard {
-  margin: 10.625rem auto 10.625rem;
-}
-
 .clipboard p {
   margin-bottom: 2.875rem;
 }
 
-@media (min-width: 40em) {
-  .clipboard {
-    margin: 7.625rem auto 9.375rem;
-  }
+.companies {
+  margin: 8.1875rem auto 10.625rem;
 }
 
 .companies.container {
@@ -315,6 +308,7 @@ main {
 @media (min-width: 40em) {
   .companies {
     --gap: 0;
+    margin: 9.375rem auto 7.625rem;
   }
   .companies .grid {
     display: -ms-grid;
@@ -339,7 +333,7 @@ footer {
 }
 
 footer .container {
-  max-width: 1110px;
+  max-width: 69.375rem;
 }
 
 footer .logo {
@@ -348,8 +342,8 @@ footer .logo {
 
 footer .nav__list {
   --gap: 1.25em;
-  margin: 2.5em auto 0;
-  max-width: 635px;
+  margin: 1.25em auto 0;
+  max-width: 39.6875rem;
 }
 
 footer .nav__list a {
@@ -358,6 +352,7 @@ footer .nav__list a {
 
 @media (min-width: 55em) {
   footer .nav__list {
+    --gap: 0.75em;
     margin: 0;
   }
   footer .nav__list.flex {

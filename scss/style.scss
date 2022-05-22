@@ -220,21 +220,15 @@ main {
 
 // CLIPBOARD SECTION
 .clipboard {
-  margin: 10.625rem auto 10.625rem;
-
   & p {
     margin-bottom: 2.875rem;
-  }
-
-  @include breakpoint(tablet) {
-    margin: 7.625rem auto 9.375rem;
   }
 }
 
 // COMPANIES SECTION
 
 .companies {
-  // --gap: 3.6875rem;
+  margin: 8.1875rem auto 10.625rem;
 
   &.container {
     max-width: 69.375rem;
@@ -242,6 +236,7 @@ main {
 
   @include breakpoint(tablet) {
     --gap: 0;
+    margin: 9.375rem auto 7.625rem;
 
     & .grid {
       display: grid;
@@ -262,7 +257,7 @@ footer {
   text-align: center;
 
   & .container {
-    max-width: 1110px;
+    max-width: 69.375rem;
   }
 
   .logo {
@@ -271,14 +266,15 @@ footer {
 
   .nav__list {
     --gap: 1.25em;
-    margin: 2.5em auto 0;
-    max-width: 635px;
+    margin: 1.25em auto 0;
+    max-width: 39.6875rem;
 
     & a {
       color: $dark-grayish-blue;
     }
 
     @include breakpoint(desktop) {
+      --gap: 0.75em;
       margin: 0;
 
       &.flex {
